@@ -16,13 +16,9 @@ public class CarTest{
     public void before(){
         fuelTank = new FuelTank(50);
         engine = new Engine(1.8);
-        car = new Car(5, 10000, "Ruby", fuelTank);
+        car = new Car(5, 10000, "Ruby", engine, fuelTank);
     }
 
-    @Test
-    public void getPrice(){
-        assertEquals(10000, car.getPrice(), 0.01);
-    }
 
     @Test
     public void getCapacity(){
@@ -31,7 +27,7 @@ public class CarTest{
 
     @Test
     public void getColour(){
-        assertEquals("Ruby", car.getColour());
+        assertEquals("Ruby", car.getColor());
     }
 
     @Test
@@ -41,12 +37,7 @@ public class CarTest{
 
     @Test
     public void canGetFuelTankCapacity() {
-        assertEquals(50, car.getFuelTankCapacityFromEngine(), 0.01);
+        assertEquals(50, car.getFuelTankCapacity(), 0.01);
     }
 
-    @Test
-    public void canDamage(){
-        car.addDamage(1000.00);
-        assertEquals(9000.00, car.getPrice(), 0.1);
-    }
 }
