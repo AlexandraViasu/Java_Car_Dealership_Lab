@@ -1,5 +1,6 @@
 package Vehicles;
 
+
 public abstract class Vehicle {
     private int capacity;
     private double price;
